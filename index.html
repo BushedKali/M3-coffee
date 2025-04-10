@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M3 - Кава з атмосферою київського метро</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Metro Line Background Animation -->
+    <div class="metro-line"></div>
+    
+    <!-- Floating Metro Ticket -->
+    <div class="metro-ticket" style="top: 20%; left: 10%;">
+        <div class="ticket-line"></div>
+        <p>M3</p>
+        <div class="ticket-line"></div>
+    </div>
+    
+    <div class="metro-ticket" style="top: 70%; left: 80%; animation-delay: 5s;">
+        <div class="ticket-line"></div>
+        <p>Кава</p>
+        <div class="ticket-line"></div>
+    </div>
+    
+    <!-- Header with Hero Image -->
+    <header id="home">
+        <div class="container">
+            <h1 class="logo animate__animated animate__bounceIn">M<span>3</span></h1>
+            <p class="tagline animate__animated animate__fadeIn animate__delay-1s">Кава з атмосферою київського метро</p>
+            <a href="#menu" class="btn animate__animated animate__fadeInUp animate__delay-2s">Наше меню</a>
+            <a href="#reservation" class="btn animate__animated animate__fadeInUp animate__delay-2s">Забронювати столик</a>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <h2 class="logo">M<span>3</span></h2>
+            <ul class="nav-links">
+                <li><a href="#home">Головна</a></li>
+                <li><a href="#menu">Меню</a></li>
+                <li><a href="#about">Про нас</a></li>
+                <li><a href="#team">Команда</a></li>
+                <li><a href="#contact">Контакти</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Menu Section -->
+    <section id="menu" class="container">
+        <h2 class="section-title">Наше меню</h2>
+        
+        <div class="menu-grid">
+            <!-- Coffee Items -->
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Кава" class="menu-img">
+                <div class="menu-content">
+                    <h3 class="menu-title">Еспресо "Золоті Ворота"</h3>
+                    <p class="menu-price">55 грн</p>
+                    <p>Міцна кава з нотами шоколаду та горіхів, подається у стильному стаканчику з логотипом станції.</p>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1551030173-122aabc4489c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Кава" class="menu-img">
+                <div class="menu-content">
+                    <h3 class="menu-title">Лате "Арсенальна"</h3>
+                    <p class="menu-price">75 грн</p>
+                    <p>Ніжний лате з вершковою текстурою та карамельним сиропом, прикрашений тематичним малюнком.</p>
+                </div>
+            </div>
+            
+            <!-- Food Items -->
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Сендвіч" class="menu-img">
+                <div class="menu-content">
+                    <h3 class="menu-title">Сендвіч "Метробудівник"</h3>
+                    <p class="menu-price">120 грн</p>
+                    <p>Свіжий хліб з куркою, авокадо, руколою та соусом песто. Названий на честь будівельників метро.</p>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Десерт" class="menu-img">
+                <div class="menu-content">
+                    <h3 class="menu-title">Круасан "Вихідний"</h3>
+                    <p class="menu-price">90 грн</p>
+                    <p>Смачний круасан з мигдалевою начинкою, прикрашений цукровою пудрою у формі схеми метро.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Interactive Metro Map -->
+        <div class="metro-map" id="metroMap">
+            <div class="metro-station" style="top: 30%; left: 25%;">
+                <div class="station-tooltip">Золоті Ворота</div>
+            </div>
+            <div class="metro-station" style="top: 45%; left: 50%;">
+                <div class="station-tooltip">Хрещатик</div>
+            </div>
+            <div class="metro-station" style="top: 60%; left: 75%;">
+                <div class="station-tooltip">Арсенальна</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="metro-train"></div>
+        <div class="metro-train" style="animation-delay: 10s;"></div>
+        
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Про нас</h2>
+            
+            <div class="about-grid">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Інтер'єр кафе" class="about-img">
+                </div>
+                <div class="about-content">
+                    <h3>Наша історія</h3>
+                    <p>Кав'ярня M3 народилася з любові до київського метрополітену - унікального архітектурного скарбу нашої столиці. Ми хотіли створити місце, де можна не просто випити кави, а й відчути особливу атмосферу підземки.</p>
+                    <p>Кожен елемент інтер'єру - від барної стійки, що нагадує вагон метро, до стаканчиків з дизайном станцій - розповідає історію київського метро.</p>
+                    <p>Наша кава - це подорож трьома лініями смаків: червоною (міцна та насичена), синьою (балансована) та зеленою (легка та свіжа).</p>
+                    
+                    <div class="metro-facts">
+                        <h4 style="margin-top: 20px;">Цікаві факти:</h4>
+                        <ul style="margin-top: 10px;">
+                            <li>Кожен стаканчик має QR-код з історією станції</li>
+                            <li>Наші столи - точні копії сидінь з вагонів метро</li>
+                            <li>Меню оновлюється разом з розкладом метро</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Team Section -->
+    <section id="team" class="container">
+        <h2 class="section-title">Наша команда</h2>
+        
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Бариста" class="team-img">
+                <h3>Олексій</h3>
+                <p>Головний бариста</p>
+                <p>"Моя улюблена станція - Театральна. Як і гарна кава, вона поєднує красу та функціональність."</p>
+            </div>
+            
+            <div class="team-member">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Бариста" class="team-img">
+                <h3>Анна</h3>
+                <p>Бариста</p>
+                <p>"Готую каву з тією ж точністю, з якою працює київське метро - без запізнень і з посмішкою!"</p>
+            </div>
+            
+            <div class="team-member">
+                <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Шеф-кухар" class="team-img">
+                <h3>Максим</h3>
+                <p>Шеф-кухар</p>
+                <p>"Сендвічі в M3 - як станції метро: кожен має свій унікальний смак і характер."</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Контакти</h2>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Як нас знайти</h3>
+                    <p><strong>Адреса:</strong> м. Київ, вул. Володимирська, 51/53</p>
+                    <p><strong>Метро:</strong> Золоті Ворота (2 хвилини пішки)</p>
+                    <p><strong>Години роботи:</strong> Щодня з 8:00 до 22:00</p>
+                    <p><strong>Телефон:</strong> +380 12 345 6789</p>
+                    <p><strong>Email:</strong> info@m3coffee.com</p>
+                    
+                    <div style="margin-top: 30px;">
+                        <h4>Розклад "пікових годин"</h4>
+                        <p>8:00-10:00 - Ранковий потік (кава з собою)</p>
+                        <p>12:00-14:00 - Обідній перерви</p>
+                        <p>17:00-19:00 - Післяробочий час</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Залишити заявку</h3>
+                    <form id="reservationForm">
+                        <input type="text" placeholder="Ваше ім'я" required>
+                        <input type="email" placeholder="Ваш email" required>
+                        <input type="tel" placeholder="Ваш телефон">
+                        <textarea placeholder="Ваше повідомлення" rows="5"></textarea>
+                        <button type="submit">Надіслати</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="metro-sign">M3</div>
+        <div class="container">
+            <h2 class="logo">M<span>3</span></h2>
+            <p>Кава з атмосферою київського метро</p>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+            </div>
+            
+            <p>&copy; 2024 Кав'ярня M3. Всі права захищені.</p>
+        </div>
+    </footer>
+    
+    <!-- Interactive Coffee Cup -->
+    <div class="coffee-cup" id="coffeeCup"></div>
+    
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>

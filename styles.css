@@ -1,0 +1,558 @@
+/* Global Styles */
+:root {
+    --metro-red: #E31E24;
+    --metro-blue: #1D5F9A;
+    --metro-green: #5DBE45;
+    --text-dark: #333333;
+    --text-light: #f8f8f8;
+    --bg-light: #f5f5f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Metro Line Animation */
+.metro-line {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background: repeating-linear-gradient(
+        to right,
+        var(--metro-blue),
+        var(--metro-blue) 20px,
+        var(--metro-red) 20px,
+        var(--metro-red) 40px,
+        var(--metro-green) 40px,
+        var(--metro-green) 60px
+    );
+    background-size: 60px 100%;
+    z-index: -1;
+    opacity: 0.05;
+    animation: metroMove 20s linear infinite;
+}
+
+@keyframes metroMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 60px 0; }
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.metro-ticket {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: floatTicket 15s ease-in-out infinite;
+    opacity: 0.9;
+}
+
+@keyframes floatTicket {
+    0%, 100% { transform: translate(0, 0) rotate(-5deg); }
+    25% { transform: translate(20px, 10px) rotate(5deg); }
+    50% { transform: translate(-20px, 20px) rotate(-8deg); }
+    75% { transform: translate(10px, -10px) rotate(8deg); }
+}
+
+.ticket-line {
+    width: 80%;
+    height: 3px;
+    background: var(--metro-red);
+    margin: 5px 0;
+}
+
+.logo {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--metro-red);
+    text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+}
+
+.logo span {
+    color: var(--metro-blue);
+}
+
+.tagline {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+}
+
+.btn {
+    display: inline-block;
+    background: var(--metro-red);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover {
+    background: var(--metro-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.btn:hover::after {
+    left: 100%;
+}
+
+/* Navigation */
+nav {
+    background-color: var(--text-dark);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+    position: relative;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--metro-red);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Menu Section */
+.section-title {
+    text-align: center;
+    margin: 60px 0 40px;
+    font-size: 2.5rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--metro-red);
+    margin: 15px auto;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.menu-item {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.menu-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.menu-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--metro-blue), var(--metro-red));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.menu-item:hover::before {
+    opacity: 0.1;
+}
+
+.menu-img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.menu-item:hover .menu-img {
+    transform: scale(1.05);
+}
+
+.menu-content {
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.menu-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--metro-blue);
+}
+
+.menu-price {
+    font-weight: bold;
+    color: var(--metro-red);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+/* Metro Map Interactive */
+.metro-map {
+    width: 100%;
+    height: 400px;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Kyiv_metro_map.svg/1200px-Kyiv_metro_map.svg.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 40px 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.metro-station {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: var(--metro-red);
+    border-radius: 50%;
+    border: 3px solid white;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.metro-station:hover {
+    transform: translate(-50%, -50%) scale(1.5);
+    box-shadow: 0 0 15px var(--metro-red);
+}
+
+.station-tooltip {
+    position: absolute;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.metro-station:hover .station-tooltip {
+    opacity: 1;
+}
+
+/* About Section */
+.about {
+    background-color: var(--metro-blue);
+    color: var(--text-light);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.metro-train {
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    background: var(--metro-red);
+    top: 50%;
+    left: -200px;
+    border-radius: 30px;
+    animation: trainMove 20s linear infinite;
+    opacity: 0.2;
+}
+
+@keyframes trainMove {
+    0% { left: -200px; }
+    100% { left: 100%; }
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.about-img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.5s ease;
+}
+
+.about-img:hover {
+    transform: scale(1.03);
+}
+
+.about-content h2 {
+    margin-bottom: 20px;
+}
+
+/* Team Section */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.team-member {
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.team-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 5px solid var(--metro-red);
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.team-member:hover .team-img {
+    border-color: var(--metro-blue);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+/* Contact Section */
+.contact {
+    background-color: var(--bg-light);
+    padding: 80px 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.contact-info h3 {
+    margin-bottom: 20px;
+    color: var(--metro-blue);
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--metro-blue);
+    box-shadow: 0 0 10px rgba(29, 95, 154, 0.2);
+    outline: none;
+}
+
+.contact-form button {
+    background: var(--metro-red);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.contact-form button:hover {
+    background: var(--metro-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+footer {
+    background-color: var(--text-dark);
+    color: var(--text-light);
+    padding: 30px 0;
+    text-align: center;
+    position: relative;
+}
+
+.metro-sign {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background: var(--metro-red);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.social-links {
+    margin: 20px 0;
+}
+
+.social-links a {
+    color: var(--text-light);
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.social-links a:hover {
+    color: var(--metro-red);
+    transform: translateY(-5px);
+}
+
+/* Interactive Coffee Cup */
+.coffee-cup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 80px;
+    background: url('https://cdn-icons-png.flaticon.com/512/2936/2936886.png') no-repeat center/contain;
+    cursor: pointer;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.coffee-cup:hover {
+    transform: scale(1.1) rotate(10deg);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+    }
+    
+    .nav-links {
+        margin-top: 20px;
+    }
+    
+    .nav-links li {
+        margin: 0 15px;
+    }
+    
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .metro-ticket {
+        display: none;
+    }
+}
